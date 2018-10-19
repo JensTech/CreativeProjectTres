@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+        <script src="cookBook.js"></script>
+        <link rel="stylesheet" href="styles.css">
+        <title>Shopping List</title>
+    </head>
+    <body>
+        <p><h1><center><ul>What Items do you need at the Store?</ul></center></h1></p><br><br>
+        <div ng-app='app' ng-controller='mainCtrl'>
+            <div class ='block'>
+                <h1 class='header'>Add New Item:</h1>
+            </div>
+            <form class='inputInfo' name='userForm' ng-submit='addNew(userForm)'>
+                <input placeholder='Item' ng-model='userForm.name'/>
+                <input placeholder='Quantity' ng-model='userForm.quantity'/>
+                <button type='Submit'>Add to Shopping List</button>
+            </form>
+            <div class='myCards'>
+                <ul class='Shopping-list'>
+                    <ul ng-repeat='user in users'>
+                    <ingredient user='user' />
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
